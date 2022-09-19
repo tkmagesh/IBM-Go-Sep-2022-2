@@ -170,7 +170,8 @@ func main() {
 		blue
 	)
 
-	fmt.Printf("Red = %d, Green = %d, Blue = %d\n", red, green, blue)
+	//fmt.Printf("Red = %d, Green = %d, Blue = %d\n", red, green, blue)
+	fmt.Println("Red =", red, "Green =", green, "Blue =", blue)
 
 	//Usage
 	const (
@@ -185,4 +186,13 @@ func main() {
 	)
 	fmt.Printf("%b, %b, %b, %b, %b, %b, %b, %b\n", VERBOSE, CONFIG_FROM_DISK, DATABASE_REQUIRED, LOGGER_ACTIVATED, DEBUG, FLOAT_SUPPORT, RECOVERY_MODE, REBOOT_ON_FAILURE)
 
+	//complex type
+	var n1 complex64 = 4 + 2i
+	fmt.Println(n1, real(n1), imag(n1))
+	var n2 complex64 = 5 + 3i
+	fmt.Println(n1 + n2)
+
+	f1 := 87352.5678464
+	fmt.Println(f1)
+	fmt.Printf("%.2f\n", f1)
 }
