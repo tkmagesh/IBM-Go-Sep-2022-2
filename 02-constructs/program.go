@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	/* if */
@@ -124,5 +126,43 @@ func main() {
 	case "Free":
 		fmt.Println("All free features")
 	}
+
 	/* for */
+	fmt.Printf("\nfor construct\n")
+
+	fmt.Println("v1.0")
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+
+	fmt.Println("v2.0 (while)")
+	num := 1
+	for num < 100 {
+		num += num
+	}
+	fmt.Println("num =", num)
+
+	fmt.Println("v3.0 (infinite)")
+	numSum := 1
+	for {
+		numSum += numSum
+		if numSum > 100 {
+			break
+		}
+	}
+	fmt.Println(numSum)
+
+	fmt.Println("using labels")
+
+OUTER_LOOP:
+	for i := 1; i <= 10; i++ {
+		for j := 1; j <= 10; j++ {
+			fmt.Printf("i = %d, j = %d\n", i, j)
+			if i == j {
+				fmt.Println("============")
+				continue OUTER_LOOP
+			}
+		}
+	}
+
 }
