@@ -105,4 +105,84 @@ func main() {
 	x, y, str := 100, 200, "Sum of 100 and 200 is"
 	result := x + y
 	fmt.Println(str, result)
+
+	//type conversion
+	var n int = 100
+	var f float32
+	f = float32(n) //converting int to float32
+	fmt.Println("f = ", f)
+
+	const pi = 3.14
+	//const pi float32 = 3.14 //unused constants are allowed
+	//pi = 2 //=> assignment to a constant not allowed
+
+	//iota
+	/*
+		const red = 1
+		const green = 2
+		const blue = 3
+	*/
+
+	/*
+		const (
+			red   = 1
+			green = 2
+			blue  = 3
+		)
+	*/
+
+	/*
+		const (
+			red   = iota
+			green = iota
+			blue  = iota
+		)
+	*/
+
+	/*
+		const (
+			red = iota
+			green
+			blue
+		)
+	*/
+
+	/*
+		const (
+			red = iota + 2
+			green
+			blue
+		)
+	*/
+
+	/*
+		const (
+			red = iota * 2
+			green
+			blue
+		)
+	*/
+
+	const (
+		red = iota + 2
+		green
+		_
+		blue
+	)
+
+	fmt.Printf("Red = %d, Green = %d, Blue = %d\n", red, green, blue)
+
+	//Usage
+	const (
+		VERBOSE = 1 << iota
+		CONFIG_FROM_DISK
+		DATABASE_REQUIRED
+		LOGGER_ACTIVATED
+		DEBUG
+		FLOAT_SUPPORT
+		RECOVERY_MODE
+		REBOOT_ON_FAILURE
+	)
+	fmt.Printf("%b, %b, %b, %b, %b, %b, %b, %b\n", VERBOSE, CONFIG_FROM_DISK, DATABASE_REQUIRED, LOGGER_ACTIVATED, DEBUG, FLOAT_SUPPORT, RECOVERY_MODE, REBOOT_ON_FAILURE)
+
 }
