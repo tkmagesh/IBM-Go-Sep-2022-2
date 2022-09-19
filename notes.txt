@@ -1,0 +1,31 @@
+Magesh Kuppan
+
+
+Schedule:
+    Commence    : 9:30 AM
+    Tea Break   : 11:00 AM (20 mins)
+    Lunch Break : 1:00 PM (1 hour)
+    Tea Break   : 3:30 PM (20 mins)
+    Wind up     : 5:30 PM 
+
+Methodology:
+    No powerpoints
+    100% hands on driven training
+    At least 50% of the participants should have completed the assignments
+
+About You:
+    Name
+    Primary Skillset
+    # of years of experience
+    Experience in Golang (if any)
+
+Software Requirements:
+    - Go tools (https://go.dev/dl/)
+    - Visual Studio Code (https://code.visualstudio.com) OR Goland (from jetbrains)
+    - Go extenstion for Visual Studio Code
+
+Verify Go installation
+    In the command prompt
+        go version
+
+
