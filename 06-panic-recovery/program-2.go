@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
 	defer func() {
@@ -11,7 +14,7 @@ func main() {
 		}
 		fmt.Println("Thank you!")
 	}()
-	result, err := divideClient(100, 0)
+	result, err := divideClient(100, 7)
 	if err != nil {
 		fmt.Println("Do not attempt to divide by zero")
 		return
@@ -32,5 +35,8 @@ func divideClient(x, y int) (result int, err error) {
 
 //3rd party
 func divide(x, y int) int {
+	if y == 0 {
+		panic(errors.New("divisor cannot be 0"))
+	}
 	return x / y
 }
