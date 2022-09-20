@@ -123,3 +123,7 @@ Data Types
 Functions
     - Variadic functions
     - Anonymous Functions
+    - Higher Order Functions
+        - Assign functions as values to variables
+        - Pass functions as arguments to other functions
+        - Functions can be returned as return result from other functions
