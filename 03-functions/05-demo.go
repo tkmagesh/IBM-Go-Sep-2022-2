@@ -2,7 +2,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 type operation func(int, int) int
 
@@ -16,8 +19,21 @@ func main() {
 
 	logOperation(100, 200, add)
 	logOperation(100, 200, subtract)
+
+	profileOperation(100, 200, add)
+	profileOperation(100, 200, subtract)
 }
 
+func profileOperation(x, y int, oper operation) {
+	start := time.Now()
+	fmt.Println(oper(x, y))
+	elapsed := time.Now().Sub(start)
+	fmt.Println("elapsed = ", elapsed)
+}
+
+/*
+
+ */
 func logOperation(x, y int, oper operation) {
 	fmt.Println("Invocation started")
 	fmt.Println(oper(x, y))
