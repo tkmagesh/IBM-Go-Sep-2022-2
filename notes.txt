@@ -122,3 +122,4 @@ Data Types
 
 Functions
     - Variadic functions
+    - Anonymous Functions
