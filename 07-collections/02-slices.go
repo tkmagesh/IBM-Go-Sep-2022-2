@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	//var nos []int
 	//var nos []int = []int{3, 1, 4, 2, 5}
-	nos := []int{3, 1, 4, 2, 5}
+	nos := []int{}
 	fmt.Println(nos)
 
 	nos = append(nos, 100)
