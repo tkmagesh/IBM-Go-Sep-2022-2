@@ -174,3 +174,23 @@ After Go 1.13
     To create a build
         go build .
 
+    To use a 3rd party module
+        go get <module_name>
+
+    To sync the go.mod file
+        go mod tidy
+
+    To localize the dependencies
+        go mod vendor
+
+    To download the dependencies
+        go mod download
+
+    Other commands
+        go mod graph
+        go mod why
+
+    Module command reference
+        https://go.dev/ref/mod
+
+
