@@ -137,3 +137,40 @@ Collections
 
     - Map
         Key/value collection
+
+github.com/tkmagesh/app-1
+
+Before Go 1.13
+    GOPATH
+        bin
+        pkg
+        src
+            github.com
+                tkmagesh
+                    app-1
+                        pkg-1
+                        main.go
+                            import "github.com/tkmagesh/app-1/pkg-1"
+
+After Go 1.13
+    module
+        - all the code that you want to be versioned together
+
+    go.mod
+        name of the module
+            advisable : repo path of the module
+        go minimum version
+        3rd party modules/package references
+
+    package
+        - folder
+
+    To create a module
+        go mod init <module_name>
+
+    To execute a module
+        go run .
+
+    To create a build
+        go build .
+
