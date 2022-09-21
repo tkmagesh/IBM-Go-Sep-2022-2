@@ -11,18 +11,19 @@ type Employee struct {
 	Id   int
 	Name string
 	City string
-	Org  Organization
+	Org  *Organization
 }
 
 func main() {
+	ibm := &Organization{
+		Name:     "IBM",
+		Location: "Cochin",
+	}
 	emp := Employee{
 		Id:   100,
 		Name: "Magesh",
 		City: "Bengaluru",
-		Org: Organization{
-			Name:     "IBM",
-			Location: "Cochin",
-		},
+		Org:  ibm,
 	}
 	fmt.Println(emp)
 
@@ -30,16 +31,13 @@ func main() {
 		Id:   101,
 		Name: "Suresh",
 		City: "Bengaluru",
-		Org: Organization{
-			Name:     "IBM",
-			Location: "Cochin",
-		},
+		Org:  ibm,
 	}
 	fmt.Println(emp2)
 
 	fmt.Println("After changing the Org Location of emp")
 	emp.Org.Location = "Pune"
 
-	fmt.Println(emp)
-	fmt.Println(emp2)
+	fmt.Println(emp.Org.Location)
+	fmt.Println(emp2.Org.Location)
 }
