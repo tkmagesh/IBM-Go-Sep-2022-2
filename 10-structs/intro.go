@@ -58,4 +58,11 @@ func main() {
 		City: "Bengaluru",
 	}
 	fmt.Println(emp == emp2)
+
+	employees := []Employee{}
+	employees = append(employees, Employee{100, "Magesh", "Bengaluru"})
+	employees = append(employees, Employee{101, "Suresh", "Pune"})
+	employees = append(employees, Employee{102, "Ramesh", "Chennai"})
+
+	fmt.Println(employees)
 }
