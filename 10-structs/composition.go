@@ -47,3 +47,20 @@ func main() {
 	fmt.Println(grapes.Product.Name)
 	fmt.Println(grapes.Name)
 }
+
+/*
+	Write the following functions (for product)
+	Format
+		=> to return a string representation of the given "product"
+			ex., "Id=100, Name=Grapes, Cost=50, Units=5, Category=Fruits"
+	ApplyDiscount
+		=> apply the given discount(%) on the given product
+
+
+	Write the above functions for PerishableProduct as well
+	Format
+		=> to return a string representation of the given "product"
+			ex., "Id=100, Name=Grapes, Cost=50, Units=5, Category=Fruits, Expiry=2 Days"
+	ApplyDiscount
+		=> as above
+*/
