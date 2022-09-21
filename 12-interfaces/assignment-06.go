@@ -14,40 +14,6 @@ func (p Product) Format() string {
 	return fmt.Sprintf("Id=%d, Name=%s, Cost=%v, Units=%d, Category=%s", p.Id, p.Name, p.Cost, p.Units, p.Category)
 }
 
-/*
-	Write the apis for the following
-
-	IndexOf => return the index of the given product
-		ex:  returns the index of the given product
-
-	Includes => return true if the given product is present in the collection else return false
-		ex:  returns true if the given product is present in the collection
-
-	Filter => return a new collection of products that satisfy the given condition
-		use cases:
-			1. filter all costly products (cost > 1000)
-				OR
-			2. filter all stationary products (category = "Stationary")
-				OR
-			3. filter all costly stationary products
-			etc
-
-	Any => return true if any of the product in the collections satifies the given criteria
-		use cases:
-			1. are there any costly product (cost > 1000)?
-			2. are there any stationary product (category = "Stationary")?
-			3. are there any costly stationary product?
-			etc
-
-	All => return true if all the products in the collections satifies the given criteria
-		use cases:
-			1. are all the products costly products (cost > 1000)?
-			2. are all the products stationary products (category = "Stationary")?
-			3. are all the products costly stationary products?
-			etc
-
-*/
-
 type Products []Product
 
 type ProductPredicate func(Product) bool
@@ -94,6 +60,21 @@ func (products Products) Any(predicate ProductPredicate) bool {
 	}
 	return false
 }
+
+/*
+	Write the apis for the following
+		Sort => Sort the products collection by any attribute
+			IMPORTANT : MUST Use sort.Sort() function
+            use cases:
+                1. sort the products collection by cost
+                2. sort the products collection by name
+                3. sort the products collection by units
+                4. sort the products collection by cost in descending order
+                5. sort the products collection by name in descending order
+                6. sort the products collection by units in descending order
+				etc
+
+*/
 
 func main() {
 	products := Products{
