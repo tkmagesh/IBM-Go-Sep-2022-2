@@ -194,3 +194,14 @@ After Go 1.13
         https://go.dev/ref/mod
 
 
+Interfaces
+    implicitly implemented
+
+
+
+Book:
+    Growing Object Oriented Software Guided By Tests
+    Agile Principles Patterns and Practices
+
+
+    
