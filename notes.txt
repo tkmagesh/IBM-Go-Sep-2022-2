@@ -204,4 +204,23 @@ Book:
     Agile Principles Patterns and Practices
 
 
-    
+Concurrency
+    Assumptions that should NOT be made:
+        1. Account for the time taken for a goroutine to execute
+        2. Sequence in which the goroutines will be executed
+
+    To detect race conditions
+        
+        go run -race <program.go>
+
+        OR
+
+        go build -race <program.go>
+
+    Channels:
+        A Receive operation is ALWAYS a blocking operation
+        A Send operation can succeed ONLY if a receive operation is already initiated (conditions apply [ONLY in NON-BUFFERED channel])
+        OR
+        A Send operation is blocked until a receive operation is initiated (conditions apply [ONLY in NON-BUFFERED channel])
+
+        In BUFFERED CHANNEL, A Send operation is a non-blocking operation if the buffer is free OR a receive is already initiated
