@@ -8,16 +8,21 @@ import (
 )
 
 func main() {
+	stopCh := make(chan string)
+	go func() {
+		fmt.Println("Hit ENTER to stop....")
+		fmt.Scanln()
+		stopCh <- "stop"
+	}()
 
-	ch := generateNos()
+	ch := generateNos(stopCh)
 	for data := range ch {
 		fmt.Println(data)
 	}
 }
 
-func generateNos() <-chan int {
+func generateNos(stopCh chan string) <-chan int {
 	ch := make(chan int)
-	timeoutCh := time.After(10 * time.Second)
 	go func() {
 		var no int = 1
 	LOOP:
@@ -26,8 +31,7 @@ func generateNos() <-chan int {
 			case ch <- no * 10:
 				time.Sleep(500 * time.Millisecond)
 				no++
-			case <-timeoutCh:
-				fmt.Println("Timeout tiggered")
+			case <-stopCh:
 				break LOOP
 			}
 		}
@@ -35,16 +39,3 @@ func generateNos() <-chan int {
 	}()
 	return ch
 }
-
-/*
-//using time.After instead
-
-func timeout(d time.Duration) <-chan time.Time {
-	timeoutCh := make(chan time.Time)
-	go func() {
-		time.Sleep(d)
-		timeoutCh <- time.Now()
-	}()
-	return timeoutCh
-}
-*/
