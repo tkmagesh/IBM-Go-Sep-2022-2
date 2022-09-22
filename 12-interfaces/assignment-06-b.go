@@ -79,68 +79,29 @@ func (products Products) Any(predicate ProductPredicate) bool {
 
 */
 
-//sort.Interface interface implementation
-func (products Products) Len() int {
-	return len(products)
-}
-
-func (products Products) Less(i, j int) bool {
-	return products[i].Id < products[j].Id
-}
-
-func (products Products) Swap(i, j int) {
-	products[i], products[j] = products[j], products[i]
-}
-
-//sort by Name
-type ByName struct {
-	Products
-}
-
-func (byName ByName) Less(i, j int) bool {
-	return byName.Products[i].Name < byName.Products[j].Name
-}
-
-//sort by Cost
-type ByCost struct {
-	Products
-}
-
-func (byCost ByCost) Less(i, j int) bool {
-	return byCost.Products[i].Cost < byCost.Products[j].Cost
-}
-
-//sort by Units
-type ByUnits struct {
-	Products
-}
-
-func (byUnits ByUnits) Less(i, j int) bool {
-	return byUnits.Products[i].Units < byUnits.Products[j].Units
-}
-
-//sort by Category
-type ByCategory struct {
-	Products
-}
-
-func (byCategory ByCategory) Less(i, j int) bool {
-	return byCategory.Products[i].Category < byCategory.Products[j].Category
-}
-
 //High level method for products
 func (products Products) Sort(attrName string) {
 	switch attrName {
 	case "Id":
-		sort.Sort(products)
+		sort.Slice(products, func(i, j int) bool {
+			return products[i].Id < products[j].Id
+		})
 	case "Name":
-		sort.Sort(ByName{products})
+		sort.Slice(products, func(i, j int) bool {
+			return products[i].Name < products[j].Name
+		})
 	case "Units":
-		sort.Sort(ByUnits{products})
+		sort.Slice(products, func(i, j int) bool {
+			return products[i].Units < products[j].Units
+		})
 	case "Cost":
-		sort.Sort(ByCost{products})
+		sort.Slice(products, func(i, j int) bool {
+			return products[i].Cost < products[j].Cost
+		})
 	case "Category":
-		sort.Sort(ByCategory{products})
+		sort.Slice(products, func(i, j int) bool {
+			return products[i].Category < products[j].Category
+		})
 	}
 }
 
