@@ -218,6 +218,7 @@ Concurrency
         go build -race <program.go>
 
     Channels:
+    ========
         A Receive operation is ALWAYS a blocking operation
         A Send operation can succeed ONLY if a receive operation is already initiated (conditions apply [ONLY in NON-BUFFERED channel])
         OR
