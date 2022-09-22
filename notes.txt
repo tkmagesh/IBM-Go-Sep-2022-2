@@ -225,3 +225,36 @@ Concurrency
         A Send operation is blocked until a receive operation is initiated (conditions apply [ONLY in NON-BUFFERED channel])
 
         In BUFFERED CHANNEL, A Send operation is a non-blocking operation if the buffer is free OR a receive is already initiated
+
+Debugging using delve
+    https://golang.cafe/blog/golang-debugging-with-delve.html
+
+
+IO
+    io package
+        Reader interface
+        Writer interface
+        Seeker interface
+        Closer interface
+
+    os package
+        APIs for file manipulation
+            creating, opening & deleting files
+
+    ioutil package
+        High level APIs for reading & writing files
+
+    bufio package
+        Buffered IO operations
+
+    JSON data
+        encoding/json package
+
+        Encoder
+            encoder := NewEncoder(w io.writer) 
+            encoder.Encode(data)
+
+        Decoder
+            decoder := NewDecoder(r io.reader)
+            decoder.decode(&data)
+    
